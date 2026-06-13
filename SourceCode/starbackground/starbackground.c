@@ -16,7 +16,7 @@
  * Credit to Øyvind Kolås (pippin) for major GEGL contributions
  * 2023  - Star background - Beaver
 
-If you paste this syntax inside Gimp's GEGL Graph filter you can test a static
+If you paste this syntax inside Gimpꞌs GEGL Graph filter you can test a static
 preview of it without installing the plugin.
 
 src  aux=[  color ]  crop 
@@ -41,7 +41,7 @@ end of syntax
  */
 
 /*This is an embedded GEGL Graph that allows  render plugins to be modified by other filters and work on transparent backgrounds
-src is GEGL's "replace" blend mode. So it is an instruction to bea*/
+src is GEGLꞌs "replace" blend mode. So it is an instruction to bea*/
 
 #define beginfix \
 " id=1 src  aux=[  color value=#ffffff ]  crop aux=[ ref=1 ]  "\
@@ -117,7 +117,7 @@ static void attach (GeglOperation *operation)
   input    = gegl_node_get_input_proxy (gegl, "input");
   output   = gegl_node_get_output_proxy (gegl, "output");
 
-/*This is Gimp's Kaleidoscope filter and certain settings are being embedded.*/
+/*This is Gimpꞌs Kaleidoscope filter and certain settings are being embedded.*/
   kali = gegl_node_new_child (gegl,
                                   "operation", "gegl:mirrors", "trim-x", 0.105, "o-y", 0.9, 
                                   NULL);
@@ -131,7 +131,7 @@ static void attach (GeglOperation *operation)
                                   "operation", "gegl:gegl", "string", endfix,
                                   NULL);
 
-/*This (dst-over) is GEGL's behind blend mode*/
+/*This (dst-over) is GEGLꞌs behind blend mode*/
   behind = gegl_node_new_child (gegl,
                                   "operation", "gegl:dst-over",
                                   NULL);
